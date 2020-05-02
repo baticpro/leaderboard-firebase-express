@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc index.ts --outDir dist --rootDir . && npm run copyfiles",
+    "build": "tsc && npm run copyfiles",
     "start": "node ./dist/index.js",
     "copyfiles": "sh ./scripts/copyfiles.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "baticpro@gmail.com",
   "license": "ISC",

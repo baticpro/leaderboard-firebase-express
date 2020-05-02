@@ -1,5 +1,6 @@
 // @ts-ignore
 const crypto = require('crypto');
+const config = require('../encrypt.json');
 const encryptionType = 'aes-256-cbc';
 const encryptionEncoding = 'base64';
 const bufferEncryption = 'utf-8';
@@ -9,8 +10,8 @@ class Encrypter {
   AesIV: string;
 
   constructor() {
-    this.AesKey = 'ABCDEFGHJKLMNOPQRSTUVWXYZABCDEFA';
-    this.AesIV = 'ABCDEFGHIJKLMNOP';
+    this.AesKey = config.key;
+    this.AesIV = config.iv;
   }
 
   encrypt(jsonObject: Object): string {
