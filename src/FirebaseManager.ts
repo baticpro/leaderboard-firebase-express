@@ -15,9 +15,13 @@ class FirebaseManager {
     this.db = firebase.firestore();
   }
 
-  public getLeaders = async (collectionName = 'leaders'): Promise<Leaders> => {
+  public getLeaders = async (
+    game: string,
+    collectionName = 'leaders',
+  ): Promise<Leaders> => {
     const collection = await this.db
       .collection(collectionName)
+      .where('gameId', '==', game)
       .orderBy('scores', 'desc')
       .limit(100)
       .get();

@@ -5,11 +5,13 @@ import config from '../../firebase-config';
 
 describe('testings firebase commands', () => {
   const databaseUrl = config.databaseURL;
+  const gameId = 'hangman';
   const firebaseManager = new FirebaseManager(databaseUrl, serviceAccount);
 
   it('get leaders', async () => {
-    const leaders = await firebaseManager.getLeaders('testing');
-    expect(Array.isArray(leaders)).toEqual(true);
+    const leaders = await firebaseManager.getLeaders(gameId, 'testing');
+    console.log(leaders);
+    expect(Array.isArray(leaders.leaders)).toEqual(true);
   });
 
   it('create leader', async () => {
@@ -17,7 +19,7 @@ describe('testings firebase commands', () => {
     const leader = await firebaseManager.createLeader(
       {
         device: 'iPhone 7',
-        gameId: 'hangman',
+        gameId: gameId,
         lang: 'ru',
         os: 'iOS',
         deviceId: 'testingId',
