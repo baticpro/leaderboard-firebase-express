@@ -15,9 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/leaders/:game', async (req, res) => {
   const { game } = req.params;
   const leaders = await firebaseManager.getLeaders(game);
-  const response = encrypter.encrypt(leaders);
+  //const response = encrypter.encrypt(leaders);
 
-  res.send(response);
+  res.send(leaders);
 });
 
 // set leader
