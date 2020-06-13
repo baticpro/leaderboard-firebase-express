@@ -7,7 +7,8 @@
     "build": "tsc && npm run copyfiles",
     "start": "node ./dist/index.js",
     "copyfiles": "sh ./scripts/copyfiles.sh",
-    "test": "jest"
+    "test": "jest",
+    "deploy": "sh ./scripts/deploy.sh"
   },
   "author": "baticpro@gmail.com",
   "license": "ISC",

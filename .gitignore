@@ -3,3 +3,5 @@ node_modules
 adminkey.json
 encrypt.json
 dist/*
+scripts/deploy.sh
+.DS_Store
